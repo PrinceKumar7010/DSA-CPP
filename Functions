@@ -1,0 +1,27 @@
+// ADDITION OF NUMBERS FUNCTION
+
+
+#include<iostream>
+using namespace std; 
+double add(float x,double y){
+    return x+y;
+
+}
+int main(){
+double e=add(1.2,2.0);
+cout <<"SUM IS : "<<e;
+return 0;
+}
+// ADDITION WITHOUT RETURNING VALUE
+
+#include<iostream>
+using namespace std; 
+void add(float x,double y){
+    cout<< x+y;
+
+}
+int main(){
+ add(1.2,2.0);
+
+return 0;
+} 
