@@ -1,0 +1,45 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+class node{
+    public:
+    int data;
+    node *next;
+}*head=NULL;
+void insert(int value){
+    node * p=new node;
+    
+    node * last=new node;
+    p->data=value;
+    p->next=NULL;
+    node* t=head;
+if(head==NULL){
+   
+    head=last=p;
+}
+else{
+    last->next=p;
+    last=p;
+    }
+}
+void disp(){
+    node *q=head;
+    while(q->next!=NULL){
+        cout<<q->data<<" ";
+        q=q->next;
+    }
+}
+
+int main() {
+   int n,o;
+    cin>>n;
+    for(int i=0;i<n;i++){
+         cin>>o;
+        insert(o);
+    }
+disp();
+   
+}                        
