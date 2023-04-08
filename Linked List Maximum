@@ -1,0 +1,56 @@
+ #include <iostream>
+using namespace std;
+class node
+{
+public:
+    int data;
+    node *next;
+
+}*head;
+
+int display(node * p){
+    if(p==NULL){
+        return 0;
+    }
+    else{
+        cout<<p->data<<"  ";
+        return display(p->next);
+    }
+}
+void max(node *p){
+    int m=-32768;
+    while(p!=NULL){
+        if(m<p->data){
+            m=p->data;
+            p=p->next;
+        }
+        
+    } cout<<"MAX : "<<m;
+}
+    void create(int arr[], int n)
+    {
+        node *t, *last;
+        head = new node;
+        head->data = arr[0];
+        head->next =NULL;
+        last = head;
+
+        for (int i = 1; i < n; i++)
+        {
+            t = new node;
+            t->data = arr[i];
+            last->next = t;
+            last=t;
+        }
+        display(head);
+        
+        max(head);
+        
+    }
+    int main()
+    {
+        int arr[] = {1, 2, 3, 41, 5, 6};
+
+        create(arr, 6);
+        
+    }        
