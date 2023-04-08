@@ -1,0 +1,58 @@
+  #include <iostream>
+
+using namespace std;
+class node{
+    public:
+    int data;
+    node *next;
+    int top;
+    
+}*head;
+void push(int x){
+    node * t=new node;
+    
+
+    if(t==NULL){
+        cout<<" STACK OVERFLOW ";
+    }
+    else{
+        t->data=x;
+        t->next=head;
+        head=t;
+    }
+}
+int pop(){
+    
+    node *p=new node;
+    p=head;
+    head=head->next;
+    int s=p->data;
+    
+    delete p;
+    return s;
+}
+void display(){
+    node * o;
+    o=head;
+    while(o!=NULL){
+        cout<<o->data<<" ";
+        o=o->next;
+        
+    }
+}
+int main()
+{
+    push(10);
+    push(20);
+    push(30);
+    push(40);
+    cout<<"\n  BEFORE  \n";
+    display();
+    pop();
+    pop();
+    cout<<"\n  AFTER  \n";
+    
+    display();
+
+    
+} 
