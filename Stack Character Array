@@ -1,0 +1,65 @@
+
+#include <iostream>
+// #pragma GCC diagnostic ignored "-Wwrite-strings"
+using namespace std;
+class stack{
+   public:
+    int size;
+    int top;
+    char * c;
+    
+  
+   
+    
+    
+void create(int d){
+    size=d;
+    top=-1;
+    c=new char[size];
+} 
+void push(char x){
+    if(top==size-1){
+        cout<<"STACK OVERFLOW";
+    }
+    else{
+    top++;
+    c[top]=x;
+    }
+}
+
+
+
+char pop(){
+    if(top==-1){
+        cout<<"STACK UNDERFLOW ";
+    }
+    else{
+        char p=c[top];
+        top--;
+        return p;
+    }
+}
+void display() {
+    for (int i=0; i<=top; i++){
+        cout<<c[i] ;
+    }
+    cout << endl;
+}
+
+} ;
+
+int main()
+{
+    stack obj;
+    obj.create(5);
+    obj.push('h');
+    obj.push('p');
+    obj.push('i');
+    obj.push('t');
+    obj.display();
+    obj.pop();
+    obj.display();
+    
+
+    return 0;
+} 
