@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std; 
+struct area{
+    int length;
+    int breadth;
+
+};
+int fun(struct area r1){
+    int a=(r1.length)*(r1.breadth);
+    return a;
+   ;
+
+}
+int main(){
+    struct area r={2,3};
+    int t=fun(r);
+    cout<<t;
+return 0;
+}
+// CALL BY REFERENCE 
+#include<iostream>
+using namespace std; 
+struct area{
+    int length;
+    int breadth;
+
+};
+int fun(struct area  &r1){
+    r1.length++;
+    int a=(r1.length)*(r1.breadth);
+    return a;
+   ;
+
+}
+int main(){
+    struct area r={2,3};
+    int t=fun(r);
+    cout<<t;
+return 0;
+}
+
+
+
+// CALL BY ADDRESS 
+#include<iostream>
+using namespace std; 
+struct area{
+    int length;
+    int breadth;
+
+};
+int fun(struct area  *r1){
+    r1->length++;
+    int a=(r1->length)*(r1->breadth);
+    return a;
+   ;
+
+}
+int main(){
+    struct area r={2,3};
+    int t=fun(&r);
+    cout<<t;
+return 0;
+}
+
+
+// ARRAY PASSED BY VALUE USING STRUCTURES
+#include<iostream>
+using namespace std; 
+struct area{
+    int a[4];
+    int breadth;
+
+};
+void fun(struct area r1,int size){
+ for(int i=0;i<size;i++){
+   cout<<r1.a[i]<<"  ";}
+
+}
+int main(){
+    struct area r={{2,3,4,5},4};
+    fun(r,4);
+return 0;
+}
+
+
+// RETURNING A POINTER FOR OBJECT CREATED IN HEAP
+#include<iostream>
+using namespace std; 
+
+int main(){
+
+return 0;
+} 
