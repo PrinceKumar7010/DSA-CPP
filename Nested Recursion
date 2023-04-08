@@ -1,0 +1,15 @@
+  #include<iostream>
+using namespace std;
+
+int fun(int n){
+    if(n>0){
+        cout<<n;
+        return fun(fun(n-1));
+    }
+    else{
+    }}
+
+int main(){
+fun(4);
+return 0;
+} 
