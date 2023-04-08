@@ -1,0 +1,42 @@
+// ARRAY AS PARAMETER 
+
+// #include<iostream>
+// using namespace std; 
+// void fun(int arr[],int n){
+//     arr[1]=6;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout<<"  " <<arr[i];
+//     }
+    
+// }
+// int main(){
+// int arr[5]={1,2,3,4,5};
+// fun(arr,5);
+// return 0;
+// }
+// RETURNING ARRAY AS PARAMETER
+#include<iostream>
+using namespace std;
+int * fun(int n){
+int *p;
+p=new int[n];
+for (int i = 0; i <n; i++)
+{
+  p[i]=i+1;
+}
+
+return p;
+}
+int main(){
+int *a;
+int p=5;
+a=fun(p);
+for (int i = 0; i < p; i++)
+{
+ cout<<a[i];
+}
+
+
+return 0;
+} 
