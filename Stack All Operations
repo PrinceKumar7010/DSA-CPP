@@ -1,0 +1,60 @@
+  #include <iostream>
+
+using namespace std;
+class stack{
+    public:
+    int top;
+    int size;
+    int * ptr;
+
+void create(){
+    int w;
+    cout<<"\nEnter size : \n";
+    cin>>w;
+    size=w;
+    top=-1;
+    ptr=new int[size];
+    }
+void push(int data){
+    if(top==size-1){
+        cout<<"\nSTACK OVERFLOW \n";
+    }
+    else{
+        top++;
+        ptr[top]=data;
+    }
+    
+    
+}
+int y;
+
+void pop(){
+    if(top==-1){
+        cout<<"STACK UNDERFLOW ";
+    }
+    else{
+        y=ptr[top];
+        top--;
+        }
+    
+    
+}
+void display(){
+   for(int i=0;i<size-1;i++){
+       cout<<ptr[i]<<" ";
+   } 
+}
+
+};
+int main()
+{
+   stack *ptr=new stack;
+   ptr->create();
+   ptr->push(12);
+   ptr->push(42);
+  ptr->push(32);
+   ptr->push(22);
+   ptr->display();
+   ptr->pop();
+   ptr->display();
+}  
