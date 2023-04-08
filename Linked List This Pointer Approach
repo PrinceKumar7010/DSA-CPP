@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+class node{
+public:
+int data;
+node * next;
+node(int data){
+	this->data=data;
+}
+}*head=NULL; 
+
+
+void insert(int index,int value){
+    node *t=new node(value);
+    if(index==0){
+    	node * p=head;
+		node*last=NULL;
+        while(p!=head){
+        last=p;
+    	p=p->next;
+	}
+	t->next=head;
+	last->next=t;
+	head=t;
+}
+ 
+else{
+	node * p=head;
+	for(int i=0;i<index-1;i++){
+      p=p->next;
+    }
+    t->next=p->next;
+    p->next=t;}
+}
+
+
+void display(node * r){
+   do{
+   	cout<<r->data;
+   	r=r->next;
+   }
+    while(r!=head);
+}
+
+
+int main(){
+insert(0,14);
+insert(1,5);
+insert(2,9);
+display(head);
+return 0;
+} 
