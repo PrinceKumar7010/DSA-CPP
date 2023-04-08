@@ -1,0 +1,66 @@
+   #include <iostream>
+using namespace std;
+class node
+{
+public:
+    int data;
+    node *next;
+
+}*head;
+
+int display(node * p){
+    if(p==NULL){
+        return 0;
+    }
+    else{
+        cout<<p->data<<"  ";
+        return display(p->next);
+    }
+}
+// void count(node*p){
+//     int c=0;
+//     while(p!=NULL){
+//         c++;
+//         p=p->next;
+//     }
+//     cout<<endl<<c<<endl;
+// }
+
+
+int rcount(node *p){
+    
+    if(p==NULL){
+        return 0;
+    }
+    else{ 
+        
+        return rcount(p->next)+1;
+    } 
+
+}
+    void create(int arr[], int n)
+    {
+        node *t, *last;
+        head = new node;
+        head->data = arr[0];
+        head->next =NULL;
+        last = head;
+
+        for (int i = 1; i < n; i++)
+        {
+            t = new node;
+            t->data = arr[i];
+            last->next = t;
+            last=t;
+        }
+        display(head);
+        int p=rcount(head);
+        cout<<endl<<p<<endl;
+    }
+    int main()
+    {
+        int arr[] = {1, 2, 3, 4, 5, 6,56};
+
+        create(arr, 7);
+        
+    }        
