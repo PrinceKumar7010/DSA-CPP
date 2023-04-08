@@ -1,0 +1,37 @@
+  #include <iostream>
+using namespace std;
+int flag=0;
+void bsort(int a[],int x  ) {
+    for(int i=0;i<x-1;i++){
+        for(int j=0;j<x-1-i;j++){
+            
+            if(a[j]<a[j+1]){
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+                flag=1;
+            }
+            
+        }
+    }
+    
+    for(int i=0;i<x;i++){
+        cout<<a[i]<<"  ";
+    }
+    if(flag=1){
+        cout<<"\n ADAPTIVE \n";
+    }
+    else{
+        cout<<"\n NON-ADAPTIVE \n";
+    }
+    
+    
+}
+
+int main()
+{
+  
+int a[]={6,5,4,3,2,1};
+int n=6;
+ bsort(a,n); 
+} 
