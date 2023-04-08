@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int arr[] = { 1, 2, 3, 4, 5, 6 };
+int i;
+void
+insert (int index, int value,int n)
+{
+
+  for (int i = n - 1; i <= index; i--)
+    {
+
+      arr[i + 1] = arr[i];
+
+    }
+  arr[index] = value;
+
+
+for (int j = 0; j < n; i++){
+    
+    cout<<arr[i]<<"  ";
+}}
+int
+main ()
+{
+
+insert(2,44,7);
+
+  return 0;
+}
